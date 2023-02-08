@@ -8,4 +8,6 @@ class Solution:
             if i==curr_reach:
                 curr_reach=max_reach
                 steps+=1
+            if curr_reach >len(nums)-2:
+                return steps
         return steps
