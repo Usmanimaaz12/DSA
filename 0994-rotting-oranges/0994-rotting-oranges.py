@@ -14,6 +14,7 @@ class Solution:
         directions={(0,1),(0,-1),(-1,0),(1,0)}
         while rott_q:
             pre_i,pre_j,time=rott_q.pop()
+#             for loop is performing BFS
             for di,dj in directions:
                 new_i,new_j=pre_i+di,pre_j+dj
                 if -1<new_i<m and -1<new_j<n and grid[new_i][new_j]==1:
