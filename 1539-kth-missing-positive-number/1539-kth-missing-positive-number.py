@@ -1,10 +1,15 @@
 class Solution:
     def findKthPositive(self, arr: List[int], k: int) -> int:
-        present = set(arr)
-        for i in range(1,len(arr)+k+1):
-            if i not in present:
-                k-=1
-            if k==0:
-                return i
+#         implemented using binary search
+        if k < arr[0]:
+            return k
+        low,high=0,len(arr)
+        while low<high:
+            mid=(low+high)//2
+            if arr[mid]-mid-1 < k:
+                low=mid+1
+            else:
+                high=mid
+        return low+k
         
         
