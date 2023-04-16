@@ -27,3 +27,4 @@ class Solution:
             ans=mergeTwoLists(ans,lists[i])
         return ans
         
+#         NEXT APPROACH IS TO MERGE USING HEAPS
