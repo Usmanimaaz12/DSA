@@ -7,21 +7,21 @@ class Solution:
         n=len(nums)
 
         index = -1
-#         finding breakpoint from right side 
+# 1         finding breakpoint from right side 
         for i in range(n-2,-1,-1):
             if nums[i] < nums[i+1]:
                 index = i
                 break
-#       if no breakpoint reverse and return 
+#  2     if no breakpoint reverse and return 
         if index == -1 :
             nums.reverse()
             return nums
-#         if breakpoint : in right half find smallest from right end and swap with index
+#   3       if breakpoint : in right half find smallest from right end and swap with index
         for i in range(n-1,index,-1):
             if nums[i]>nums[index]:
                 nums[i],nums[index] = nums[index], nums[i]
                 break
-# reverse the array from the index and return ans
+#    4   reverse the array from the index and return ans
         nums[index+1:] = reversed(nums[index+1:])
         return nums
         
